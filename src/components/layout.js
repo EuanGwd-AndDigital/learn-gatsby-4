@@ -1,11 +1,24 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 
 const Layout = ({ pageTitle, children }) => {
+  const data = useStaticQuery(graphql`
+    query SiteTitle {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
   return (
     <Container>
-      <title>{pageTitle}</title>
+      <title>
+        {pageTitle} | {data.site.siteMetadata.title}
+      </title>
+      <SiteTitle>{data.site.siteMetadata.title}</SiteTitle>
       <nav>
         <NavLinks>
           <NavLinkItem>
@@ -48,4 +61,11 @@ const NavLinkItem = styled.li`
 
 const NavLinkText = styled(Link)`
   color: black;
+`;
+
+const SiteTitle = styled.header`
+  font-size: 3rem;
+  color: gray;
+  font-weight: 700;
+  margin: 3rem 0;
 `;
