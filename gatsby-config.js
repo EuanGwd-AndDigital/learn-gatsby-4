@@ -8,6 +8,7 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-mdx',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-source-filesystem',
@@ -25,6 +26,5 @@ module.exports = {
       },
       __key: 'blog',
     },
-    'gatsby-plugin-mdx',
   ],
 };
