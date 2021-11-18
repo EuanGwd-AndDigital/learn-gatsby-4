@@ -1,18 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+import { StaticImage } from 'gatsby-plugin-image';
+
+import Layout from '../components/layout';
 
 const IndexPage = () => {
   return (
-    <Main>
-      <div>{`Testing gatsby 4`}</div>
-    </Main>
+    <Layout pageTitle="Home Page">
+      <title>Home Page</title>
+      <p>{`I'm making this by following the Gatsby Tutorial.`}</p>
+      <StaticImage
+        alt="Clifford, a reddish-brown pitbull, posing on a couch and looking stoically at the camera"
+        src="https://pbs.twimg.com/media/E1oMV3QVgAIr1NT?format=jpg&name=large"
+      />
+    </Layout>
   );
 };
 
 export default IndexPage;
-
-const Main = styled.main`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-`;
